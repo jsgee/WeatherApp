@@ -1,0 +1,17 @@
+﻿@model List<WeatherApp.Models.Day>
+
+    @{
+    ViewData["Title"] = "Weather";
+    }
+
+    <h2>Weather</h2>
+
+
+    @foreach (var day in Model)
+{
+    <h3 class="text-primary">@day.DayDate.ToShortDateString()</h3>
+    <p class="text-info">Min: @day.DailyTemp.min degrees</p>
+    <p class="text-info">Max: @day.DailyTemp.max degrees</p>
+    <p class="text-info">Avg: @Math.Round(day.DailyTemp.avg,2) degrees</p>
+}
+

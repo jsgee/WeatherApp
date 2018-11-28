@@ -1,0 +1,16 @@
+﻿@model IEnumerable<WeatherApp.Models.Day>
+
+@{
+    ViewData["Title"] = "Weather";
+}
+
+<h2>Weather</h2>
+
+@foreach (var day in Model)
+{
+    <h3 class="text-primary">@day.DayDate</h3>
+    <p class="text-info">Min: @day.DailyTemp.min</p>
+    <p class="text-info">Max: @day.DailyTemp.max</p>
+    <p class="text-info">Avg: @day.DailyTemp.avg</p>
+}
+
